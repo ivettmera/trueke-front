@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Intercambio - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="my-objects.html" class="nav-link">Mis Objetos</a>
+                    <a href="my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <img src="../assets/images/avatar.jpg" alt="Avatar" class="user-avatar">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="user-catalog.html" class="dropdown-item">Mi Catálogo</a>
+                            <a href="#" class="dropdown-item">Configuración</a>
+                            <a href="../index.html" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Propuesta de Intercambio</h1>
+                <p>Selecciona qué objetos quieres intercambiar</p>
+            </div>
+
+            <div class="proposal-container">
+                <!-- Target Object -->
+                <div class="target-object-section">
+                    <h2>Objeto que te interesa</h2>
+                    <div class="target-object-card">
+                        <div class="object-image">
+                            <img src="../assets/images/guitar.jpg" alt="Guitarra Acústica" id="targetObjectImage">
+                        </div>
+                        <div class="object-info">
+                            <h3 id="targetObjectTitle">Guitarra Acústica Yamaha</h3>
+                            <p class="object-owner">
+                                <img src="../assets/images/user-maria.jpg" alt="María López" class="owner-avatar">
+                                <span>María López</span>
+                                <div class="owner-rating">
+                                    <div class="stars">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span>(4.8)</span>
+                                </div>
+                            </p>
+                            <p class="object-description" id="targetObjectDescription">
+                                Guitarra en excelente estado, perfecta para principiantes. Incluye funda y púas.
+                            </p>
+                            <div class="object-details">
+                                <span class="detail-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2L2 4v6c0 5.55 3.84 7.74 6 8 2.16-.26 6-2.45 6-8V4l-6-2z" fill="#4CAF50"/>
+                                    </svg>
+                                    Verificado
+                                </span>
+                                <span class="detail-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 14s6-5.686 6-9A6 6 0 008 14zM8 7a2 2 0 100-4 2 2 0 000 4z" fill="#666"/>
+                                    </svg>
+                                    Madrid, España
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exchange Form -->
+                <div class="exchange-form-section">
+                    <h2>Tus objetos disponibles</h2>
+                    <p>Selecciona uno o más objetos para proponer el intercambio</p>
+
+                    <!-- Search and Filter -->
+                    <div class="form-controls">
+                        <div class="search-container">
+                            <input type="text" placeholder="Buscar en tus objetos..." class="search-input" id="myObjectsSearch">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M9 17A8 8 0 109 1a8 8 0 000 16z" stroke="#6C757D" stroke-width="2"/>
+                                <path d="M17 17l-2.5-2.5" stroke="#6C757D" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="">Todas las categorías</option>
+                            <option value="musica">Música</option>
+                            <option value="libros">Libros</option>
+                            <option value="hogar">Hogar</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="deportes">Deportes</option>
+                        </select>
+                    </div>
+
+                    <!-- My Objects Grid -->
+                    <div class="my-objects-grid" id="myObjectsGrid">
+                        <!-- Object Card 1 -->
+                        <div class="selectable-object-card" data-category="musica" data-id="vinyl-1">
+                            <div class="card-image">
+                                <img src="../assets/images/vinyl-trench.jpg" alt="Disco de Vinilo">
+                                <div class="selection-overlay">
+                                    <div class="selection-indicator">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>Disco de Vinilo - Trench autografiado</h4>
+                                <p class="card-category">Música</p>
+                                <div class="card-stats">
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 11l-3.5-3.5L4.5 6.5 7 9l6.5-6.5L14.5 3.5 7 11z" fill="#4CAF50"/>
+                                        </svg>
+                                        12 vistas
+                                    </span>
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 13l-1.02-.92C2.48 9.36 1 7.82 1 6.1 1 4.42 2.42 3 4.1 3c1.48 0 1.77.69 2.9 1.77C8.13 3.69 9.42 3 10.9 3 12.58 3 14 4.42 14 6.1c0 1.72-1.48 3.26-4.98 6.98L7 13z" fill="#FF4444"/>
+                                        </svg>
+                                        3 favoritos
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Object Card 2 -->
+                        <div class="selectable-object-card" data-category="libros" data-id="book-1">
+                            <div class="card-image">
+                                <img src="../assets/images/book-soledad.jpg" alt="Libro">
+                                <div class="selection-overlay">
+                                    <div class="selection-indicator">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>Libro Cien Años de Soledad</h4>
+                                <p class="card-category">Libros</p>
+                                <div class="card-stats">
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 11l-3.5-3.5L4.5 6.5 7 9l6.5-6.5L14.5 3.5 7 11z" fill="#4CAF50"/>
+                                        </svg>
+                                        25 vistas
+                                    </span>
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 13l-1.02-.92C2.48 9.36 1 7.82 1 6.1 1 4.42 2.42 3 4.1 3c1.48 0 1.77.69 2.9 1.77C8.13 3.69 9.42 3 10.9 3 12.58 3 14 4.42 14 6.1c0 1.72-1.48 3.26-4.98 6.98L7 13z" fill="#FF4444"/>
+                                        </svg>
+                                        8 favoritos
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Object Card 3 -->
+                        <div class="selectable-object-card" data-category="tecnologia" data-id="monitor-1">
+                            <div class="card-image">
+                                <img src="../assets/images/monitor-gaming.jpg" alt="Monitor">
+                                <div class="selection-overlay">
+                                    <div class="selection-indicator">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>Monitor Gaming IPS LCD</h4>
+                                <p class="card-category">Tecnología</p>
+                                <div class="card-stats">
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 11l-3.5-3.5L4.5 6.5 7 9l6.5-6.5L14.5 3.5 7 11z" fill="#4CAF50"/>
+                                        </svg>
+                                        45 vistas
+                                    </span>
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 13l-1.02-.92C2.48 9.36 1 7.82 1 6.1 1 4.42 2.42 3 4.1 3c1.48 0 1.77.69 2.9 1.77C8.13 3.69 9.42 3 10.9 3 12.58 3 14 4.42 14 6.1c0 1.72-1.48 3.26-4.98 6.98L7 13z" fill="#FF4444"/>
+                                        </svg>
+                                        15 favoritos
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Object Card 4 -->
+                        <div class="selectable-object-card" data-category="hogar" data-id="chair-1">
+                            <div class="card-image">
+                                <img src="../assets/images/chair.jpg" alt="Silla">
+                                <div class="selection-overlay">
+                                    <div class="selection-indicator">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>Silla Cómoda S - Serie</h4>
+                                <p class="card-category">Hogar</p>
+                                <div class="card-stats">
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 11l-3.5-3.5L4.5 6.5 7 9l6.5-6.5L14.5 3.5 7 11z" fill="#4CAF50"/>
+                                        </svg>
+                                        38 vistas
+                                    </span>
+                                    <span class="stat-item">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 13l-1.02-.92C2.48 9.36 1 7.82 1 6.1 1 4.42 2.42 3 4.1 3c1.48 0 1.77.69 2.9 1.77C8.13 3.69 9.42 3 10.9 3 12.58 3 14 4.42 14 6.1c0 1.72-1.48 3.26-4.98 6.98L7 13z" fill="#FF4444"/>
+                                        </svg>
+                                        12 favoritos
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selected Objects Summary -->
+                    <div class="selected-objects-summary" id="selectedSummary" style="display: none;">
+                        <h3>Objetos seleccionados</h3>
+                        <div class="selected-objects-list" id="selectedObjectsList"></div>
+                        <div class="selection-actions">
+                            <button class="btn btn-outline" onclick="clearSelection()">Limpiar selección</button>
+                            <span class="selection-count">
+                                <span id="selectionCount">0</span> objeto(s) seleccionado(s)
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Message Section -->
+                    <div class="message-section">
+                        <h3>Mensaje para María López</h3>
+                        <textarea 
+                            placeholder="Escribe un mensaje explicando por qué te interesa este intercambio..." 
+                            rows="4"
+                            class="message-textarea"
+                            id="proposalMessage"
+                            maxlength="500"
+                        ></textarea>
+                        <div class="message-info">
+                            <span class="char-count">
+                                <span id="charCount">0</span>/500 caracteres
+                            </span>
+                            <span class="message-tip">
+                                💡 Tip: Explica por qué este intercambio sería beneficioso para ambos
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Proposal Summary -->
+                    <div class="proposal-summary">
+                        <h3>Resumen del intercambio</h3>
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <div class="summary-label">Vas a recibir:</div>
+                                <div class="summary-value">
+                                    <img src="../assets/images/guitar.jpg" alt="Guitarra" class="summary-image">
+                                    <span>Guitarra Acústica Yamaha</span>
+                                </div>
+                            </div>
+                            <div class="summary-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 16l-4-4 4-4M17 8l4 4-4 4" stroke="#4CAF50" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Vas a ofrecer:</div>
+                                <div class="summary-value" id="offeredObjectsSummary">
+                                    <span class="no-selection">No has seleccionado ningún objeto</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn btn-outline" onclick="goBack()">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 2L2 8l6 6M2 8h12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Volver al catálogo
+                        </button>
+                        <button class="btn btn-primary" id="submitProposal" disabled onclick="submitProposal()">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Enviar propuesta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/exchanges.js"></script>
+    <script>
+        // Exchange Proposal specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('myObjectsSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const objectCards = document.querySelectorAll('.selectable-object-card');
+            const selectedSummary = document.getElementById('selectedSummary');
+            const selectedObjectsList = document.getElementById('selectedObjectsList');
+            const selectionCount = document.getElementById('selectionCount');
+            const submitBtn = document.getElementById('submitProposal');
+            const proposalMessage = document.getElementById('proposalMessage');
+            const charCount = document.getElementById('charCount');
+            const offeredObjectsSummary = document.getElementById('offeredObjectsSummary');
+
+            let selectedObjects = new Set();
+
+            // Search and filter functionality
+            searchInput.addEventListener('input', filterObjects);
+            categoryFilter.addEventListener('change', filterObjects);
+
+            // Message character count
+            proposalMessage.addEventListener('input', () => {
+                charCount.textContent = proposalMessage.value.length;
+            });
+
+            // Object selection
+            objectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const objectId = card.dataset.id;
+                    const objectTitle = card.querySelector('h4').textContent;
+                    const objectImage = card.querySelector('img').src;
+                    
+                    if (selectedObjects.has(objectId)) {
+                        selectedObjects.delete(objectId);
+                        card.classList.remove('selected');
+                    } else {
+                        selectedObjects.add(objectId);
+                        card.classList.add('selected');
+                    }
+                    
+                    updateSelectedObjectsDisplay();
+                    updateSubmitButton();
+                });
+            });
+
+            function filterObjects() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+                let visibleCount = 0;
+
+                objectCards.forEach(card => {
+                    const title = card.querySelector('h4').textContent.toLowerCase();
+                    const category = card.dataset.category;
+                    
+                    const matchesSearch = title.includes(searchTerm);
+                    const matchesCategory = !selectedCategory || category === selectedCategory;
+                    
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            function updateSelectedObjectsDisplay() {
+                if (selectedObjects.size === 0) {
+                    selectedSummary.style.display = 'none';
+                    offeredObjectsSummary.innerHTML = '<span class="no-selection">No has seleccionado ningún objeto</span>';
+                    return;
+                }
+
+                selectedSummary.style.display = 'block';
+                selectionCount.textContent = selectedObjects.size;
+                
+                // Update selected objects list
+                const selectedList = Array.from(selectedObjects).map(objectId => {
+                    const card = document.querySelector(`[data-id="${objectId}"]`);
+                    const title = card.querySelector('h4').textContent;
+                    const image = card.querySelector('img').src;
+                    
+                    return `
+                        <div class="selected-object-item">
+                            <img src="${image}" alt="${title}" class="selected-object-image">
+                            <span class="selected-object-title">${title}</span>
+                            <button class="remove-selection-btn" onclick="removeSelection('${objectId}')">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M11 3L3 11M3 3l8 8" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+                
+                selectedObjectsList.innerHTML = selectedList;
+                
+                // Update summary
+                const firstObject = Array.from(selectedObjects)[0];
+                const firstCard = document.querySelector(`[data-id="${firstObject}"]`);
+                const firstTitle = firstCard.querySelector('h4').textContent;
+                const firstImage = firstCard.querySelector('img').src;
+                
+                if (selectedObjects.size === 1) {
+                    offeredObjectsSummary.innerHTML = `
+                        <img src="${firstImage}" alt="${firstTitle}" class="summary-image">
+                        <span>${firstTitle}</span>
+                    `;
+                } else {
+                    offeredObjectsSummary.innerHTML = `
+                        <img src="${firstImage}" alt="${firstTitle}" class="summary-image">
+                        <span>${firstTitle} y ${selectedObjects.size - 1} más</span>
+                    `;
+                }
+            }
+
+            function updateSubmitButton() {
+                submitBtn.disabled = selectedObjects.size === 0;
+            }
+
+            // Make functions global for onclick handlers
+            window.removeSelection = function(objectId) {
+                selectedObjects.delete(objectId);
+                document.querySelector(`[data-id="${objectId}"]`).classList.remove('selected');
+                updateSelectedObjectsDisplay();
+                updateSubmitButton();
+            };
+
+            window.clearSelection = function() {
+                selectedObjects.clear();
+                objectCards.forEach(card => card.classList.remove('selected'));
+                updateSelectedObjectsDisplay();
+                updateSubmitButton();
+            };
+
+            window.submitProposal = function() {
+                if (selectedObjects.size === 0) {
+                    alert('Debes seleccionar al menos un objeto para intercambiar');
+                    return;
+                }
+
+                const message = proposalMessage.value.trim();
+                if (!message) {
+                    alert('Por favor, escribe un mensaje para acompañar tu propuesta');
+                    return;
+                }
+
+                // Simulate API call
+                const submitBtn = document.getElementById('submitProposal');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg> Enviando...';
+
+                setTimeout(() => {
+                    alert('¡Propuesta enviada con éxito! María López será notificada.');
+                    window.location.href = 'my-exchanges.html';
+                }, 2000);
+            };
+
+            window.goBack = function() {
+                window.history.back();
+            };
+        });
+    </script>
+</body>
+</html>

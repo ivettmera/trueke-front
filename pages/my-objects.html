@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Objetos - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="my-objects.html" class="nav-link active">Mis Objetos</a>
+                    <a href="my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <img src="../assets/images/avatar.jpg" alt="Avatar" class="user-avatar">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="user-catalog.html" class="dropdown-item">Mi Catálogo</a>
+                            <a href="#" class="dropdown-item">Configuración</a>
+                            <a href="../index.html" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mis Objetos</h1>
+                <p>Gestiona tus objetos publicados</p>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="action-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar en mis objetos..." class="search-input" id="searchMyObjects">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M9 17A8 8 0 109 1a8 8 0 000 16z" stroke="#6C757D" stroke-width="2"/>
+                        <path d="M17 17l-2.5-2.5" stroke="#6C757D" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="filter-container">
+                    <select class="filter-select" id="statusFilter">
+                        <option value="">Todos los estados</option>
+                        <option value="available">Disponible</option>
+                        <option value="in-exchange">En intercambio</option>
+                        <option value="exchanged">Intercambiado</option>
+                    </select>
+                </div>
+                <a href="publish.html" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Publicar Objeto
+                </a>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 7H4l2-4h12l2 4zM4 7v10a2 2 0 002 2h12a2 2 0 002-2V7" stroke="#4CAF50" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Objetos Publicados</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#2196F3" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Disponibles</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 16l-4-4 4-4M17 8l4 4-4 4" stroke="#FF9800" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>En Intercambio</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 6L9 17l-5-5" stroke="#4CAF50" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3</h3>
+                        <p>Intercambiados</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Objects Grid -->
+            <div class="objects-grid" id="objectsGrid">
+                <!-- Object Card 1 -->
+                <div class="object-card" data-status="available">
+                    <div class="object-image">
+                        <img src="../assets/images/vinyl-trench.jpg" alt="Disco de Vinilo">
+                        <div class="object-status status-available">Disponible</div>
+                        <div class="object-actions">
+                            <button class="action-btn edit-btn" data-id="1">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M12.854 1.146a.5.5 0 00-.708 0L11 2.293 13.707 5 14.854 3.854a.5.5 0 000-.708l-2-2z" fill="currentColor"/>
+                                    <path d="M10.5 2.793L2.707 10.586A1 1 0 002 11.414V14h2.586a1 1 0 00.707-.293L13.207 5.5 10.5 2.793z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn delete-btn" data-id="1">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6.5 1h3a.5.5 0 01.5.5v1H6v-1a.5.5 0 01.5-.5zM11 2.5v-1A1.5 1.5 0 009.5 0h-3A1.5 1.5 0 005 1.5v1H2.5a.5.5 0 000 1h.5v10A1.5 1.5 0 004.5 15h7a1.5 1.5 0 001.5-1.5v-10h.5a.5.5 0 000-1H11z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="object-info">
+                        <h3>Disco de Vinilo - Trench autografiado</h3>
+                        <p class="object-category">Música</p>
+                        <div class="object-stats">
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12l-4.5-4.5L4.5 6.5 8 10l7.5-7.5L16.5 3.5 8 12z" fill="#4CAF50"/>
+                                </svg>
+                                12 vistas
+                            </span>
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 15l-1.16-1.06C3.02 10.68 1 8.76 1 6.5 1 4.42 2.42 3 4.5 3c1.74 0 2.09.81 3.5 2.09C9.41 3.81 10.76 3 12.5 3 14.58 3 16 4.42 16 6.5c0 2.26-2.02 4.18-5.84 7.44L8 15z" fill="#FF4444"/>
+                                </svg>
+                                3 favoritos
+                            </span>
+                        </div>
+                        <p class="object-date">Publicado hace 2 días</p>
+                    </div>
+                </div>
+
+                <!-- Object Card 2 -->
+                <div class="object-card" data-status="in-exchange">
+                    <div class="object-image">
+                        <img src="../assets/images/book-soledad.jpg" alt="Libro">
+                        <div class="object-status status-in-exchange">En intercambio</div>
+                        <div class="object-actions">
+                            <button class="action-btn view-btn" data-id="2">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 2C4.5 2 1.73 4.11 1 7c.73 2.89 3.5 5 7 5s6.27-2.11 7-5c-.73-2.89-3.5-5-7-5z" fill="currentColor"/>
+                                    <circle cx="8" cy="7" r="3" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="object-info">
+                        <h3>Libro Cien Años de Soledad</h3>
+                        <p class="object-category">Libros</p>
+                        <div class="object-stats">
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12l-4.5-4.5L4.5 6.5 8 10l7.5-7.5L16.5 3.5 8 12z" fill="#4CAF50"/>
+                                </svg>
+                                25 vistas
+                            </span>
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 15l-1.16-1.06C3.02 10.68 1 8.76 1 6.5 1 4.42 2.42 3 4.5 3c1.74 0 2.09.81 3.5 2.09C9.41 3.81 10.76 3 12.5 3 14.58 3 16 4.42 16 6.5c0 2.26-2.02 4.18-5.84 7.44L8 15z" fill="#FF4444"/>
+                                </svg>
+                                8 favoritos
+                            </span>
+                        </div>
+                        <p class="object-date">Publicado hace 1 semana</p>
+                        <div class="exchange-info">
+                            <p>En intercambio con <strong>María López</strong></p>
+                            <a href="my-exchanges.html" class="view-exchange-link">Ver intercambio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Object Card 3 -->
+                <div class="object-card" data-status="available">
+                    <div class="object-image">
+                        <img src="../assets/images/monitor-gaming.jpg" alt="Monitor">
+                        <div class="object-status status-available">Disponible</div>
+                        <div class="object-actions">
+                            <button class="action-btn edit-btn" data-id="3">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M12.854 1.146a.5.5 0 00-.708 0L11 2.293 13.707 5 14.854 3.854a.5.5 0 000-.708l-2-2z" fill="currentColor"/>
+                                    <path d="M10.5 2.793L2.707 10.586A1 1 0 002 11.414V14h2.586a1 1 0 00.707-.293L13.207 5.5 10.5 2.793z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn delete-btn" data-id="3">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6.5 1h3a.5.5 0 01.5.5v1H6v-1a.5.5 0 01.5-.5zM11 2.5v-1A1.5 1.5 0 009.5 0h-3A1.5 1.5 0 005 1.5v1H2.5a.5.5 0 000 1h.5v10A1.5 1.5 0 004.5 15h7a1.5 1.5 0 001.5-1.5v-10h.5a.5.5 0 000-1H11z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="object-info">
+                        <h3>Monitor Gaming IPS LCD</h3>
+                        <p class="object-category">Tecnología</p>
+                        <div class="object-stats">
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12l-4.5-4.5L4.5 6.5 8 10l7.5-7.5L16.5 3.5 8 12z" fill="#4CAF50"/>
+                                </svg>
+                                45 vistas
+                            </span>
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 15l-1.16-1.06C3.02 10.68 1 8.76 1 6.5 1 4.42 2.42 3 4.5 3c1.74 0 2.09.81 3.5 2.09C9.41 3.81 10.76 3 12.5 3 14.58 3 16 4.42 16 6.5c0 2.26-2.02 4.18-5.84 7.44L8 15z" fill="#FF4444"/>
+                                </svg>
+                                15 favoritos
+                            </span>
+                        </div>
+                        <p class="object-date">Publicado hace 3 días</p>
+                    </div>
+                </div>
+
+                <!-- Object Card 4 -->
+                <div class="object-card" data-status="exchanged">
+                    <div class="object-image">
+                        <img src="../assets/images/chair.jpg" alt="Silla">
+                        <div class="object-status status-exchanged">Intercambiado</div>
+                        <div class="object-actions">
+                            <button class="action-btn view-btn" data-id="4">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 2C4.5 2 1.73 4.11 1 7c.73 2.89 3.5 5 7 5s6.27-2.11 7-5c-.73-2.89-3.5-5-7-5z" fill="currentColor"/>
+                                    <circle cx="8" cy="7" r="3" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="object-info">
+                        <h3>Silla Cómoda S - Serie</h3>
+                        <p class="object-category">Hogar</p>
+                        <div class="object-stats">
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12l-4.5-4.5L4.5 6.5 8 10l7.5-7.5L16.5 3.5 8 12z" fill="#4CAF50"/>
+                                </svg>
+                                38 vistas
+                            </span>
+                            <span class="stat-item">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 15l-1.16-1.06C3.02 10.68 1 8.76 1 6.5 1 4.42 2.42 3 4.5 3c1.74 0 2.09.81 3.5 2.09C9.41 3.81 10.76 3 12.5 3 14.58 3 16 4.42 16 6.5c0 2.26-2.02 4.18-5.84 7.44L8 15z" fill="#FF4444"/>
+                                </svg>
+                                12 favoritos
+                            </span>
+                        </div>
+                        <p class="object-date">Intercambiado hace 2 semanas</p>
+                        <div class="exchange-info">
+                            <p>Intercambiado con <strong>Carlos Ruiz</strong></p>
+                            <button class="rate-btn" data-id="4">Calificar intercambio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <path d="M32 8C18.745 8 8 18.745 8 32s10.745 24 24 24 24-10.745 24-24S45.255 8 32 8zm0 44c-11.046 0-20-8.954-20-20s8.954-20 20-20 20 8.954 20 20-8.954 20-20 20z" fill="#9E9E9E"/>
+                        <path d="M32 20v16M32 44h.01" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>No se encontraron objetos</h3>
+                <p>Intenta cambiar los filtros o buscar otro término</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script>
+        // My Objects specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchMyObjects');
+            const statusFilter = document.getElementById('statusFilter');
+            const objectsGrid = document.getElementById('objectsGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            // Search functionality
+            searchInput.addEventListener('input', filterObjects);
+            statusFilter.addEventListener('change', filterObjects);
+
+            // Edit object
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const objectId = btn.dataset.id;
+                    window.location.href = `publish.html?edit=${objectId}`;
+                });
+            });
+
+            // Delete object
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const objectId = btn.dataset.id;
+                    if (confirm('¿Estás seguro de eliminar este objeto?')) {
+                        deleteObject(objectId);
+                    }
+                });
+            });
+
+            // Rate exchange
+            document.querySelectorAll('.rate-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const objectId = btn.dataset.id;
+                    window.location.href = `exchange-rating.html?object=${objectId}`;
+                });
+            });
+
+            function filterObjects() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const statusFilter = document.getElementById('statusFilter').value;
+                const objectCards = document.querySelectorAll('.object-card');
+                let visibleCount = 0;
+
+                objectCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const status = card.dataset.status;
+                    
+                    const matchesSearch = title.includes(searchTerm);
+                    const matchesStatus = !statusFilter || status === statusFilter;
+                    
+                    if (matchesSearch && matchesStatus) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    objectsGrid.style.display = 'none';
+                    emptyState.style.display = 'block';
+                } else {
+                    objectsGrid.style.display = 'grid';
+                    emptyState.style.display = 'none';
+                }
+            }
+
+            function deleteObject(objectId) {
+                // Simulate API call
+                setTimeout(() => {
+                    const objectCard = document.querySelector(`[data-id="${objectId}"]`).closest('.object-card');
+                    objectCard.remove();
+                    filterObjects(); // Recheck if empty
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

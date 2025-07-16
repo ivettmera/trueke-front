@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="register.html" class="nav-link">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-form">
+                    <h1>Iniciar Sesión</h1>
+                    <p class="auth-subtitle">Bienvenido de vuelta a Truek-e</p>
+                    
+                    <!-- Demo Users Info -->
+                    <div class="demo-users">
+                        <h3>Usuarios de prueba disponibles:</h3>
+                        <div class="demo-user">
+                            <strong>Usuario 1:</strong> maria@trueke.com / contraseña: 123456
+                            <button type="button" class="btn btn-sm btn-outline" onclick="fillLoginForm('maria@trueke.com', '123456')">Usar este usuario</button>
+                        </div>
+                        <div class="demo-user">
+                            <strong>Usuario 2:</strong> carlos@trueke.com / contraseña: 123456
+                            <button type="button" class="btn btn-sm btn-outline" onclick="fillLoginForm('carlos@trueke.com', '123456')">Usar este usuario</button>
+                        </div>
+                        <div class="demo-user">
+                            <strong>Usuario 3:</strong> ana@trueke.com / contraseña: 123456
+                            <button type="button" class="btn btn-sm btn-outline" onclick="fillLoginForm('ana@trueke.com', '123456')">Usar este usuario</button>
+                        </div>
+                    </div>
+
+                    <form id="loginForm" class="auth-form-container">
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-input" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-input" placeholder="Contraseña" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>o</span>
+                    </div>
+
+                    <button class="btn btn-google">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z" fill="#4285F4"/>
+                            <path d="M10 20c2.7 0 4.96-.89 6.62-2.41l-3.16-2.45c-.9.61-2.07.98-3.46.98-2.68 0-4.93-1.8-5.74-4.22H1.07v2.52C2.72 17.75 6.09 20 10 20z" fill="#34A853"/>
+                            <path d="M4.26 11.9c-.25-.61-.38-1.28-.38-1.9s.14-1.29.38-1.9V5.58H1.07C.35 6.97 0 8.45 0 10s.35 3.03 1.07 4.42L4.26 11.9z" fill="#FBBC05"/>
+                            <path d="M10 3.98c1.17 0 2.23.4 3.06 1.2l2.27-2.27C13.94 1.09 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.58L4.26 8.1C5.07 5.68 7.32 3.98 10 3.98z" fill="#EA4335"/>
+                        </svg>
+                        Continuar con Google
+                    </button>
+
+                    <div class="auth-links">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        // Function to fill login form with demo user data
+        function fillLoginForm(email, password) {
+            document.getElementById('email').value = email;
+            document.getElementById('password').value = password;
+        }
+    </script>
+</body>
+</html>

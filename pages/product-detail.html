@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="my-objects.html" class="nav-link">Mis Objetos</a>
+                    <a href="my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <img src="../assets/images/avatar.jpg" alt="Avatar" class="user-avatar">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="user-catalog.html" class="dropdown-item">Mi Catálogo</a>
+                            <a href="#" class="dropdown-item">Configuración</a>
+                            <a href="../index.html" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="../index.html">Inicio</a>
+                <span>›</span>
+                <a href="user-catalog.html?user=maria-lopez">María López</a>
+                <span>›</span>
+                <span>Guitarra Acústica Yamaha</span>
+            </nav>
+
+            <!-- Product Detail -->
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="../assets/images/guitar.jpg" alt="Guitarra Acústica Yamaha" class="main-product-image" id="mainImage">
+                        <button class="favorite-btn" id="favoriteBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-7.55 10.18L12 21z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="../assets/images/guitar.jpg" alt="Vista principal" class="product-thumbnail active">
+                        <img src="../assets/images/guitar-detail1.jpg" alt="Detalle 1" class="product-thumbnail">
+                        <img src="../assets/images/guitar-detail2.jpg" alt="Detalle 2" class="product-thumbnail">
+                        <img src="../assets/images/guitar-detail3.jpg" alt="Detalle 3" class="product-thumbnail">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-detail">
+                    <div class="product-header">
+                        <h1>Guitarra Acústica Yamaha</h1>
+                        <div class="product-status">
+                            <span class="status-badge available">Disponible</span>
+                        </div>
+                    </div>
+
+                    <div class="product-rating-detail">
+                        <div class="rating-stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <span class="rating-text">5.0 (12 valoraciones)</span>
+                    </div>
+
+                    <div class="product-category">
+                        <span class="category-tag">Música</span>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Descripción</h3>
+                        <p>Guitarra acústica Yamaha en excelente estado, perfecta para principiantes y estudiantes. Ha sido cuidada con mucho cariño y apenas tiene señales de uso. Incluye funda acolchada original y un set de púas de diferentes grosores.</p>
+                        
+                        <h4>Características:</h4>
+                        <ul>
+                            <li>Marca: Yamaha</li>
+                            <li>Modelo: FG800</li>
+                            <li>Tapa: Pícea maciza</li>
+                            <li>Fondo y aros: Nato</li>
+                            <li>Diapasón: Palisandro</li>
+                            <li>Incluye funda acolchada</li>
+                            <li>Set de púas incluido</li>
+                        </ul>
+                        
+                        <h4>Estado:</h4>
+                        <p>Excelente estado, sin golpes ni rayones importantes. Las cuerdas fueron cambiadas hace 2 meses. Sonido claro y nítido.</p>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Publicado:</span>
+                            <span class="detail-value">Hace 3 días</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Vistas:</span>
+                            <span class="detail-value">47</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Ubicación:</span>
+                            <span class="detail-value">Madrid, España</span>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-lg" onclick="proposeExchange()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7 14l-4-4 4-4M13 6l4 4-4 4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Proponer Intercambio
+                        </button>
+                        <button class="btn btn-outline" onclick="contactOwner()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 4l3.586 3.586a2 2 0 002.828 0L10 7l3.586 3.586a2 2 0 002.828 0L17 10v7a2 2 0 01-2 2H5a2 2 0 01-2-2V4z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Owner Info -->
+            <div class="owner-info-section">
+                <div class="owner-card">
+                    <div class="owner-header">
+                        <img src="../assets/images/user-maria.jpg" alt="María López" class="owner-avatar-large">
+                        <div class="owner-details">
+                            <h3>María López</h3>
+                            <div class="owner-rating">
+                                <div class="rating-stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span>4.8 (18 valoraciones)</span>
+                            </div>
+                            <p class="owner-location">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14s6-5.686 6-9A6 6 0 008 14zM8 7a2 2 0 100-4 2 2 0 000 4z" fill="#666"/>
+                                </svg>
+                                Madrid, España
+                            </p>
+                        </div>
+                    </div>
+                    <div class="owner-stats">
+                        <div class="stat">
+                            <strong>24</strong>
+                            <span>Objetos</span>
+                        </div>
+                        <div class="stat">
+                            <strong>18</strong>
+                            <span>Intercambios</span>
+                        </div>
+                        <div class="stat">
+                            <strong>2</strong>
+                            <span>Años</span>
+                        </div>
+                    </div>
+                    <div class="owner-actions">
+                        <button class="btn btn-outline" onclick="viewUserCatalog()">Ver Catálogo</button>
+                        <button class="btn btn-secondary" onclick="viewReviews()">Ver Reseñas</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products-section">
+                <h2>Más objetos de María López</h2>
+                <div class="related-products-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="../assets/images/book-harry.jpg" alt="Colección Harry Potter" class="product-image">
+                            <div class="product-status-badge available">Disponible</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Colección Harry Potter Completa</h3>
+                            <p class="product-category">Libros</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="rating-count">(8)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="../assets/images/tablet.jpg" alt="Tablet Samsung" class="product-image">
+                            <div class="product-status-badge available">Disponible</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Tablet Android Samsung</h3>
+                            <p class="product-category">Tecnología</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-count">(5)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="../assets/images/keyboard.jpg" alt="Teclado Musical" class="product-image">
+                            <div class="product-status-badge available">Disponible</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Teclado Musical Casio</h3>
+                            <p class="product-category">Música</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="rating-count">(3)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script>
+        // Product Detail specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.product-thumbnail');
+
+            // Favorite functionality
+            favoriteBtn.addEventListener('click', () => {
+                favoriteBtn.classList.toggle('active');
+                // Add animation or feedback
+            });
+
+            // Image gallery functionality
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked thumbnail
+                    thumbnail.classList.add('active');
+                    
+                    // Update main image
+                    mainImage.src = thumbnail.src;
+                });
+            });
+
+            // Related products click
+            document.querySelectorAll('.related-products-grid .product-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    // Get product info and redirect
+                    const productTitle = card.querySelector('h3').textContent;
+                    window.location.href = `product-detail.html?product=${encodeURIComponent(productTitle)}&user=maria-lopez`;
+                });
+            });
+        });
+
+        function proposeExchange() {
+            // Get product info and redirect to exchange proposal
+            const productTitle = document.querySelector('h1').textContent;
+            window.location.href = `exchange-proposal.html?object=${encodeURIComponent(productTitle)}&user=maria-lopez`;
+        }
+
+        function contactOwner() {
+            // Show contact modal or redirect to messaging
+            alert('Función de mensajería en desarrollo. Por ahora, usa "Proponer Intercambio".');
+        }
+
+        function viewUserCatalog() {
+            window.location.href = 'user-catalog.html?user=maria-lopez';
+        }
+
+        function viewReviews() {
+            // Scroll to reviews section or redirect
+            window.location.href = 'user-catalog.html?user=maria-lopez#reviews';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                
+                <!-- Navigation menu -->
+                <div class="nav-menu" id="navMenu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                    <a href="profile.html" class="nav-link active">Mi Perfil</a>
+                </div>
+                
+                <!-- User menu -->
+                <div class="user-menu" id="userMenu">
+                    <div class="user-info">
+                        <img src="" alt="Avatar" class="user-avatar" id="userAvatar">
+                        <span class="user-name" id="userName"></span>
+                    </div>
+                    <button class="btn btn-outline" onclick="logout()">Cerrar Sesión</button>
+                </div>
+                
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="" alt="Avatar" id="profileAvatar">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name" id="profileName"></h1>
+                        <p class="profile-location" id="profileLocation"></p>
+                        <p class="profile-member-since" id="profileMemberSince"></p>
+                        <div class="profile-rating">
+                            <div class="stars" id="profileRating"></div>
+                            <span class="rating-value" id="ratingValue"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="statObjects"></span>
+                        <span class="stat-label">Objetos publicados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="statExchanges"></span>
+                        <span class="stat-label">Intercambios realizados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="statReviews"></span>
+                        <span class="stat-label">Reseñas recibidas</span>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-tabs">
+                        <button class="tab-btn active" onclick="showTab('products')">Mis Productos</button>
+                        <button class="tab-btn" onclick="showTab('exchanges')">Mis Intercambios</button>
+                        <button class="tab-btn" onclick="showTab('reviews')">Reseñas</button>
+                    </div>
+
+                    <div class="tab-content active" id="products-tab">
+                        <div class="user-products" id="userProducts">
+                            <!-- Products will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="exchanges-tab">
+                        <div class="exchanges-list">
+                            <div class="exchange-item">
+                                <h3>Intercambios en progreso</h3>
+                                <p>No tienes intercambios en progreso.</p>
+                            </div>
+                            <div class="exchange-item">
+                                <h3>Intercambios completados</h3>
+                                <p>No tienes intercambios completados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="reviews-tab">
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <h3>Reseñas recibidas</h3>
+                                <p>Aún no tienes reseñas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        // Protect page and load profile
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPage();
+            loadProfile();
+        });
+
+        function loadProfile() {
+            const user = getCurrentUser();
+            if (!user) return;
+
+            // Load profile information
+            document.getElementById('profileAvatar').src = user.avatar;
+            document.getElementById('profileName').textContent = user.name;
+            document.getElementById('profileLocation').textContent = user.location;
+            document.getElementById('profileMemberSince').textContent = `Miembro desde ${user.memberSince}`;
+            document.getElementById('ratingValue').textContent = user.rating;
+            
+            // Load rating stars
+            const ratingContainer = document.getElementById('profileRating');
+            ratingContainer.innerHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElement('span');
+                star.className = 'star';
+                star.textContent = '★';
+                if (i <= Math.floor(user.rating)) {
+                    star.classList.add('filled');
+                }
+                ratingContainer.appendChild(star);
+            }
+
+            // Load stats
+            document.getElementById('statObjects').textContent = user.stats.objects;
+            document.getElementById('statExchanges').textContent = user.stats.exchanges;
+            document.getElementById('statReviews').textContent = user.stats.reviews;
+
+            // Load user products
+            loadUserProductsInProfile(user);
+        }
+
+        function loadUserProductsInProfile(user) {
+            const productsContainer = document.getElementById('userProducts');
+            productsContainer.innerHTML = '';
+
+            if (user.products.length === 0) {
+                productsContainer.innerHTML = '<p>No tienes productos publicados.</p>';
+                return;
+            }
+
+            user.products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <span class="product-badge ${product.status === 'available' ? 'badge-new' : 'badge-exchanged'}">
+                        ${product.status === 'available' ? 'Disponible' : 'Intercambiado'}
+                    </span>
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-category">${product.category}</p>
+                        <p class="product-condition">Estado: ${product.condition}</p>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm">Editar</button>
+                            <button class="btn btn-outline btn-sm">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                productsContainer.appendChild(productCard);
+            });
+        }
+
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

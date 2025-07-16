@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truek-e | Intercambia lo que ya no usas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="index.html" class="logo">Truek-e</a>
+                
+                <!-- Navigation menu - only visible when logged in -->
+                <div class="nav-menu" id="navMenu" style="display: none;">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="pages/publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="pages/my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                    <a href="pages/profile.html" class="nav-link">Mi Perfil</a>
+                </div>
+                
+                <!-- Auth actions - only visible when not logged in -->
+                <div class="nav-actions" id="authActions">
+                    <a href="pages/register.html" class="btn btn-outline">Registrarse</a>
+                    <a href="pages/login.html" class="btn btn-primary">Iniciar Sesión</a>
+                </div>
+                
+                <!-- User menu - only visible when logged in -->
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <div class="user-info">
+                        <img src="" alt="Avatar" class="user-avatar" id="userAvatar">
+                        <span class="user-name" id="userName"></span>
+                    </div>
+                    <button class="btn btn-outline" onclick="logout()">Cerrar Sesión</button>
+                </div>
+                
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">¡Intercambia lo que ya no usas<br>por algo que sí necesitas!</h1>
+            <p class="hero-subtitle">Descubre miles de objetos y encuentra tu próximo trueque.</p>
+            
+            <!-- Call to action for non-logged users -->
+            <div class="hero-cta" id="heroCTA">
+                <a href="pages/login.html" class="btn btn-primary btn-large">Iniciar Sesión para Intercambiar</a>
+                <a href="pages/register.html" class="btn btn-outline btn-large">Registrarse Gratis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - only visible when logged in -->
+    <section class="products-section" id="productsSection" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Disponibles para intercambiar</h2>
+            
+            <!-- Search and Filter -->
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <input type="text" placeholder="¿Qué estás buscando?" class="search-input">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M9 17A8 8 0 109 1a8 8 0 000 16z" stroke="#6C757D" stroke-width="2"/>
+                        <path d="M17 17l-2.5-2.5" stroke="#6C757D" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <select class="category-filter">
+                    <option>Escoge una categoría</option>
+                    <option>Tecnología</option>
+                    <option>Libros</option>
+                    <option>Música</option>
+                    <option>Hogar</option>
+                    <option>Deportes</option>
+                </select>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded dynamically based on logged user -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-primary">Ver más</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome message for non-logged users -->
+    <section class="welcome-section" id="welcomeSection">
+        <div class="container">
+            <div class="welcome-content">
+                <h2>¿Cómo funciona Truek-e?</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">1</div>
+                        <h3>Regístrate</h3>
+                        <p>Crea tu cuenta gratuita y personaliza tu perfil</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">2</div>
+                        <h3>Publica</h3>
+                        <p>Sube fotos de los objetos que quieres intercambiar</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">3</div>
+                        <h3>Intercambia</h3>
+                        <p>Encuentra lo que necesitas y propón un intercambio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

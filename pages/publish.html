@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Objeto - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link active">Publicar Objeto</a>
+                    <a href="my-objects.html" class="nav-link">Mis Objetos</a>
+                    <a href="my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <img src="../assets/images/avatar.jpg" alt="Avatar" class="user-avatar">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="user-catalog.html" class="dropdown-item">Mi Catálogo</a>
+                            <a href="#" class="dropdown-item">Configuración</a>
+                            <a href="javascript:void(0)" onclick="logout()" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Publicar Objeto</h1>
+                <p>Comparte lo que ya no necesitas y encuentra algo nuevo</p>
+            </div>
+
+            <div class="publish-container">
+                <form class="publish-form" id="publishForm">
+                    <!-- Image Upload Section -->
+                    <div class="form-section">
+                        <h2>Imágenes del objeto</h2>
+                        <p class="form-description">Agrega hasta 4 fotos de tu objeto. La primera será la imagen principal.</p>
+                        
+                        <div class="image-upload-container">
+                            <div class="image-upload-grid" id="imageGrid">
+                                <div class="image-upload-slot main-slot">
+                                    <input type="file" id="imageInput1" accept="image/*" class="image-input" data-slot="1">
+                                    <label for="imageInput1" class="upload-label">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                                        </svg>
+                                        <span>Imagen principal</span>
+                                        <small>Arrastra o haz clic para agregar</small>
+                                    </label>
+                                    <div class="image-preview" style="display: none;">
+                                        <img src="" alt="Preview" class="preview-image">
+                                        <button type="button" class="remove-image" onclick="removeImage(1)">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M15 5L5 15M5 5l10 10" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="image-upload-slot">
+                                    <input type="file" id="imageInput2" accept="image/*" class="image-input" data-slot="2">
+                                    <label for="imageInput2" class="upload-label">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                                        </svg>
+                                        <span>Imagen 2</span>
+                                        <small>Opcional</small>
+                                    </label>
+                                    <div class="image-preview" style="display: none;">
+                                        <img src="" alt="Preview" class="preview-image">
+                                        <button type="button" class="remove-image" onclick="removeImage(2)">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M12 4L4 12M4 4l8 8" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="image-upload-slot">
+                                    <input type="file" id="imageInput3" accept="image/*" class="image-input" data-slot="3">
+                                    <label for="imageInput3" class="upload-label">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                                        </svg>
+                                        <span>Imagen 3</span>
+                                        <small>Opcional</small>
+                                    </label>
+                                    <div class="image-preview" style="display: none;">
+                                        <img src="" alt="Preview" class="preview-image">
+                                        <button type="button" class="remove-image" onclick="removeImage(3)">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M12 4L4 12M4 4l8 8" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="image-upload-slot">
+                                    <input type="file" id="imageInput4" accept="image/*" class="image-input" data-slot="4">
+                                    <label for="imageInput4" class="upload-label">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                                        </svg>
+                                        <span>Imagen 4</span>
+                                        <small>Opcional</small>
+                                    </label>
+                                    <div class="image-preview" style="display: none;">
+                                        <img src="" alt="Preview" class="preview-image">
+                                        <button type="button" class="remove-image" onclick="removeImage(4)">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M12 4L4 12M4 4l8 8" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="image-counter">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                                </svg>
+                                <span class="count" id="imageCount">0</span> de 4 imágenes subidas
+                            </div>
+                            
+                            <div class="image-upload-tips">
+                                <strong>💡 Consejos para mejores imágenes:</strong>
+                                <ul>
+                                    <li>Usa buena iluminación natural</li>
+                                    <li>Muestra el objeto desde diferentes ángulos</li>
+                                    <li>Incluye detalles importantes o defectos</li>
+                                    <li>Formatos aceptados: JPG, PNG (máx. 5MB cada una)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Basic Information -->
+                    <div class="form-section">
+                        <h2>Información básica</h2>
+                        
+                        <div class="form-group">
+                            <label for="objectTitle" class="form-label">Título del objeto *</label>
+                            <input type="text" id="objectTitle" class="form-input" required 
+                                   placeholder="Ej: Guitarra acústica Yamaha FG800" maxlength="80">
+                            <div class="form-help">
+                                <span class="char-counter">
+                                    <span id="titleCharCount">0</span>/80 caracteres
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objectCategory" class="form-label">Categoría *</label>
+                            <select id="objectCategory" class="form-select" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="tecnologia">Tecnología</option>
+                                <option value="libros">Libros</option>
+                                <option value="musica">Música</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="deportes">Deportes</option>
+                                <option value="ropa">Ropa y Accesorios</option>
+                                <option value="juguetes">Juguetes y Juegos</option>
+                                <option value="vehiculos">Vehículos</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objectCondition" class="form-label">Estado del objeto *</label>
+                            <select id="objectCondition" class="form-select" required>
+                                <option value="">Selecciona el estado</option>
+                                <option value="nuevo">Nuevo</option>
+                                <option value="excelente">Excelente</option>
+                                <option value="bueno">Bueno</option>
+                                <option value="regular">Regular</option>
+                                <option value="para-reparar">Para reparar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objectDescription" class="form-label">Descripción *</label>
+                            <textarea id="objectDescription" class="form-textarea" required 
+                                      placeholder="Describe tu objeto: características, estado, historia, etc." 
+                                      rows="5" maxlength="500"></textarea>
+                            <div class="form-help">
+                                <span class="char-counter">
+                                    <span id="descCharCount">0</span>/500 caracteres
+                                </span>
+                                <span class="form-tip">
+                                    💡 Tip: Menciona marca, modelo, año, uso y cualquier detalle relevante
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exchange Preferences -->
+                    <div class="form-section">
+                        <h2>Preferencias de intercambio</h2>
+                        
+                        <div class="form-group">
+                            <label for="interestedIn" class="form-label">¿Qué te interesa recibir?</label>
+                            <textarea id="interestedIn" class="form-textarea" 
+                                      placeholder="Ej: Libros de fantasía, equipos de fotografía, instrumentos musicales..." 
+                                      rows="3" maxlength="300"></textarea>
+                            <div class="form-help">
+                                <span class="char-counter">
+                                    <span id="interestedCharCount">0</span>/300 caracteres
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Categorías de interés</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="interestedCategories" value="tecnologia">
+                                    <span class="checkbox-label">Tecnología</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="interestedCategories" value="libros">
+                                    <span class="checkbox-label">Libros</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="interestedCategories" value="musica">
+                                    <span class="checkbox-label">Música</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="interestedCategories" value="hogar">
+                                    <span class="checkbox-label">Hogar</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="interestedCategories" value="deportes">
+                                    <span class="checkbox-label">Deportes</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="interestedCategories" value="ropa">
+                                    <span class="checkbox-label">Ropa y Accesorios</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="form-section">
+                        <h2>Ubicación</h2>
+                        
+                        <div class="form-group">
+                            <label for="objectLocation" class="form-label">Ciudad *</label>
+                            <input type="text" id="objectLocation" class="form-input" required 
+                                   placeholder="Ej: Madrid, Barcelona, Valencia..." value="Madrid">
+                            <div class="form-help">
+                                <span class="form-tip">
+                                    📍 Esta información ayuda a encontrar intercambios locales
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="allowShipping">
+                                <span class="checkbox-label">Acepto envío por correo</span>
+                            </label>
+                            <div class="form-help">
+                                <span class="form-tip">
+                                    Si marcas esta opción, podrás intercambiar con personas de otras ciudades
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="saveDraft()">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 2v6l3-3M2 14h12a2 2 0 002-2V4a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Guardar borrador
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="previewObject()">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 2C4.5 2 1.73 4.11 1 7c.73 2.89 3.5 5 7 5s6.27-2.11 7-5c-.73-2.89-3.5-5-7-5z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Vista previa
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M14 2L7 9l-3-3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Publicar objeto
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Preview Modal -->
+                <div class="modal" id="previewModal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Vista previa</h3>
+                            <button type="button" class="modal-close" onclick="closePreview()">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="preview-card">
+                                <div class="preview-image-container">
+                                    <img src="" alt="Vista previa" class="preview-main-image" id="previewImage">
+                                    <div class="preview-status">Disponible</div>
+                                </div>
+                                <div class="preview-info">
+                                    <h4 id="previewTitle">Título del objeto</h4>
+                                    <p class="preview-category" id="previewCategory">Categoría</p>
+                                    <p class="preview-description" id="previewDescription">Descripción del objeto...</p>
+                                    <div class="preview-details">
+                                        <span class="preview-condition" id="previewCondition">Estado</span>
+                                        <span class="preview-location" id="previewLocation">Ubicación</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline" onclick="closePreview()">Cerrar</button>
+                            <button type="button" class="btn btn-primary" onclick="submitFromPreview()">Publicar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        // Protect page - redirect to login if not authenticated
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPage();
+        });
+    </script>
+    <script>
+        // Publish form functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('publishForm');
+            const titleInput = document.getElementById('objectTitle');
+            const descInput = document.getElementById('objectDescription');
+            const interestedInput = document.getElementById('interestedIn');
+            const titleCharCount = document.getElementById('titleCharCount');
+            const descCharCount = document.getElementById('descCharCount');
+            const interestedCharCount = document.getElementById('interestedCharCount');
+            
+            // Character counters
+            titleInput.addEventListener('input', () => {
+                titleCharCount.textContent = titleInput.value.length;
+            });
+            
+            descInput.addEventListener('input', () => {
+                descCharCount.textContent = descInput.value.length;
+            });
+            
+            interestedInput.addEventListener('input', () => {
+                interestedCharCount.textContent = interestedInput.value.length;
+            });
+            
+            // Image upload functionality
+            const imageInputs = document.querySelectorAll('.image-input');
+            imageInputs.forEach(input => {
+                input.addEventListener('change', handleImageUpload);
+            });
+            
+            // Form submission
+            form.addEventListener('submit', handleFormSubmit);
+            
+            // Drag and drop functionality
+            const uploadSlots = document.querySelectorAll('.image-upload-slot');
+            uploadSlots.forEach(slot => {
+                slot.addEventListener('dragover', handleDragOver);
+                slot.addEventListener('drop', handleDrop);
+            });
+        });
+        
+        function handleImageUpload(event) {
+            const input = event.target;
+            const slot = input.dataset.slot;
+            const file = input.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const uploadSlot = input.closest('.image-upload-slot');
+                    const preview = uploadSlot.querySelector('.image-preview');
+                    const previewImage = preview.querySelector('.preview-image');
+                    const uploadLabel = uploadSlot.querySelector('.upload-label');
+                    
+                    previewImage.src = e.target.result;
+                    uploadLabel.style.display = 'none';
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
+        function removeImage(slot) {
+            const input = document.getElementById(`imageInput${slot}`);
+            const uploadSlot = input.closest('.image-upload-slot');
+            const preview = uploadSlot.querySelector('.image-preview');
+            const uploadLabel = uploadSlot.querySelector('.upload-label');
+            
+            input.value = '';
+            preview.style.display = 'none';
+            uploadLabel.style.display = 'flex';
+        }
+        
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.currentTarget.classList.add('drag-over');
+        }
+        
+        function handleDrop(event) {
+            event.preventDefault();
+            event.currentTarget.classList.remove('drag-over');
+            
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                const input = event.currentTarget.querySelector('.image-input');
+                input.files = files;
+                input.dispatchEvent(new Event('change'));
+            }
+        }
+        
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const title = formData.get('objectTitle') || document.getElementById('objectTitle').value;
+            const category = formData.get('objectCategory') || document.getElementById('objectCategory').value;
+            const description = formData.get('objectDescription') || document.getElementById('objectDescription').value;
+            
+            if (!title || !category || !description) {
+                alert('Por favor completa todos los campos obligatorios');
+                return;
+            }
+            
+            // Check if at least one image is uploaded
+            const imageInputs = document.querySelectorAll('.image-input');
+            let hasImage = false;
+            imageInputs.forEach(input => {
+                if (input.files.length > 0) {
+                    hasImage = true;
+                }
+            });
+            
+            if (!hasImage) {
+                alert('Por favor agrega al menos una imagen de tu objeto');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg> Publicando...';
+            
+            setTimeout(() => {
+                alert('¡Objeto publicado exitosamente!');
+                window.location.href = 'my-objects.html';
+            }, 2000);
+        }
+        
+        function saveDraft() {
+            // Save form data to localStorage
+            const formData = {
+                title: document.getElementById('objectTitle').value,
+                category: document.getElementById('objectCategory').value,
+                condition: document.getElementById('objectCondition').value,
+                description: document.getElementById('objectDescription').value,
+                interestedIn: document.getElementById('interestedIn').value,
+                location: document.getElementById('objectLocation').value,
+                allowShipping: document.getElementById('allowShipping').checked
+            };
+            
+            localStorage.setItem('objectDraft', JSON.stringify(formData));
+            alert('Borrador guardado exitosamente');
+        }
+        
+        function previewObject() {
+            const title = document.getElementById('objectTitle').value;
+            const category = document.getElementById('objectCategory').value;
+            const description = document.getElementById('objectDescription').value;
+            const condition = document.getElementById('objectCondition').value;
+            const location = document.getElementById('objectLocation').value;
+            
+            if (!title || !category || !description) {
+                alert('Por favor completa la información básica para ver la vista previa');
+                return;
+            }
+            
+            // Update preview
+            document.getElementById('previewTitle').textContent = title;
+            document.getElementById('previewCategory').textContent = category;
+            document.getElementById('previewDescription').textContent = description;
+            document.getElementById('previewCondition').textContent = condition;
+            document.getElementById('previewLocation').textContent = location;
+            
+            // Set preview image
+            const firstImage = document.querySelector('.image-preview img[src]:not([src=""])');
+            if (firstImage) {
+                document.getElementById('previewImage').src = firstImage.src;
+            }
+            
+            // Show modal
+            document.getElementById('previewModal').style.display = 'flex';
+        }
+        
+        function closePreview() {
+            document.getElementById('previewModal').style.display = 'none';
+        }
+        
+        function submitFromPreview() {
+            closePreview();
+            document.getElementById('publishForm').dispatchEvent(new Event('submit'));
+        }
+    </script>
+    
+    <!-- Image Upload JavaScript -->
+    <script src="../js/image-upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Truek-e</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">
+                        <img src="assets/logo.png" alt="Truek-e" class="brand-logo">
+                        <span class="brand-text">Truek-e</span>
+                    </a>
+                </div>
+                
+                <div class="nav-center">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Buscar objetos...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="my-objects.html" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Mis objetos</span>
+                    </a>
+                    <a href="my-exchanges.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Intercambios</span>
+                    </a>
+                    <a href="publish.html" class="nav-link btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        <span>Publicar</span>
+                    </a>
+                    <div class="user-menu">
+                        <button class="user-avatar">
+                            <img src="https://via.placeholder.com/40x40" alt="Usuario">
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="user-profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>Mi perfil</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Configuración</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Cerrar sesión</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="profile-container">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-cover">
+                        <img src="https://via.placeholder.com/1200x300" alt="Portada" class="cover-image">
+                        <button class="edit-cover-btn">
+                            <i class="fas fa-camera"></i>
+                            Cambiar portada
+                        </button>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <div class="profile-avatar-container">
+                            <img src="https://via.placeholder.com/120x120" alt="María González" class="profile-avatar">
+                            <button class="edit-avatar-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="profile-details">
+                            <h1 class="profile-name">María González</h1>
+                            <p class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Madrid, España
+                            </p>
+                            <p class="profile-member-since">
+                                <i class="fas fa-calendar"></i>
+                                Miembro desde Enero 2024
+                            </p>
+                            
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">23</span>
+                                    <span class="stat-label">Objetos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">15</span>
+                                    <span class="stat-label">Intercambios</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">4.8</span>
+                                    <span class="stat-label">Valoración</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-edit"></i>
+                                Editar perfil
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-share"></i>
+                                Compartir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Content -->
+                <div class="profile-content">
+                    <div class="profile-sidebar">
+                        <div class="sidebar-section">
+                            <h3>Acerca de</h3>
+                            <p>Apasionada por el intercambio sostenible y el reciclaje. Me encanta dar nueva vida a los objetos y encontrar tesoros únicos. Siempre busco intercambios justos y beneficiosos para ambas partes.</p>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3>Intereses</h3>
+                            <div class="interests-tags">
+                                <span class="interest-tag">Libros</span>
+                                <span class="interest-tag">Decoración</span>
+                                <span class="interest-tag">Tecnología</span>
+                                <span class="interest-tag">Ropa vintage</span>
+                                <span class="interest-tag">Plantas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3>Valoraciones recientes</h3>
+                            <div class="recent-reviews">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <img src="https://via.placeholder.com/32x32" alt="Ana" class="review-avatar">
+                                        <div class="review-info">
+                                            <span class="review-name">Ana López</span>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">"Intercambio perfecto, muy amable y puntual"</p>
+                                </div>
+                                
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <img src="https://via.placeholder.com/32x32" alt="Carlos" class="review-avatar">
+                                        <div class="review-info">
+                                            <span class="review-name">Carlos Ruiz</span>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">"Excelente comunicación y objeto en perfecto estado"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-main">
+                        <div class="profile-tabs">
+                            <button class="tab-btn active" data-tab="objects">
+                                <i class="fas fa-box"></i>
+                                Objetos (23)
+                            </button>
+                            <button class="tab-btn" data-tab="reviews">
+                                <i class="fas fa-star"></i>
+                                Valoraciones (47)
+                            </button>
+                            <button class="tab-btn" data-tab="activity">
+                                <i class="fas fa-clock"></i>
+                                Actividad reciente
+                            </button>
+                        </div>
+                        
+                        <div class="tab-content active" id="objects-tab">
+                            <div class="objects-grid">
+                                <div class="product-card">
+                                    <div class="product-image-container">
+                                        <img src="https://via.placeholder.com/250x180" alt="Cámara vintage" class="product-image">
+                                        <div class="product-status-badge available">Disponible</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Cámara vintage Canon</h3>
+                                        <p class="product-category">Electrónicos</p>
+                                        <div class="product-meta">
+                                            <span class="product-condition">Muy bueno</span>
+                                            <span class="product-date">Hace 2 días</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image-container">
+                                        <img src="https://via.placeholder.com/250x180" alt="Libro de cocina" class="product-image">
+                                        <div class="product-status-badge available">Disponible</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Libro de cocina mediterránea</h3>
+                                        <p class="product-category">Libros</p>
+                                        <div class="product-meta">
+                                            <span class="product-condition">Como nuevo</span>
+                                            <span class="product-date">Hace 1 semana</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image-container">
+                                        <img src="https://via.placeholder.com/250x180" alt="Lámpara de mesa" class="product-image">
+                                        <div class="product-status-badge exchanged">Intercambiado</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Lámpara de mesa vintage</h3>
+                                        <p class="product-category">Decoración</p>
+                                        <div class="product-meta">
+                                            <span class="product-condition">Bueno</span>
+                                            <span class="product-date">Hace 2 semanas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image-container">
+                                        <img src="https://via.placeholder.com/250x180" alt="Vestido vintage" class="product-image">
+                                        <div class="product-status-badge available">Disponible</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Vestido vintage años 70</h3>
+                                        <p class="product-category">Ropa</p>
+                                        <div class="product-meta">
+                                            <span class="product-condition">Muy bueno</span>
+                                            <span class="product-date">Hace 3 días</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="reviews-tab">
+                            <div class="reviews-list">
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <img src="https://via.placeholder.com/48x48" alt="Pedro" class="review-avatar">
+                                        <div class="review-info">
+                                            <h4 class="review-name">Pedro Martínez</h4>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="review-date">Hace 3 días</span>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">Excelente intercambio con María. La cámara estaba en perfecto estado tal como se describía. Comunicación fluida y puntual en la entrega. ¡Totalmente recomendable!</p>
+                                </div>
+                                
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <img src="https://via.placeholder.com/48x48" alt="Laura" class="review-avatar">
+                                        <div class="review-info">
+                                            <h4 class="review-name">Laura Fernández</h4>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="review-date">Hace 1 semana</span>
+                                        </div>
+                                    </div>
+                                    <p class="review-text">Muy buena experiencia intercambiando libros con María. Persona seria y confiable. El libro llegó en excelente estado y el intercambio fue justo para ambas partes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="activity-tab">
+                            <div class="activity-timeline">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Publicó</strong> un nuevo objeto: "Cámara vintage Canon"</p>
+                                        <span class="activity-time">Hace 2 días</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Completó</strong> un intercambio con Pedro Martínez</p>
+                                        <span class="activity-time">Hace 3 días</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Recibió</strong> una valoración de 5 estrellas</p>
+                                        <span class="activity-time">Hace 1 semana</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Truek-e</h3>
+                    <p>La plataforma de intercambio que conecta personas y objetos de manera sostenible.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces útiles</h4>
+                    <ul>
+                        <li><a href="#">Cómo funciona</a></li>
+                        <li><a href="#">Términos de uso</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Electrónicos</a></li>
+                        <li><a href="#">Libros</a></li>
+                        <li><a href="#">Ropa</a></li>
+                        <li><a href="#">Decoración</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Truek-e. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/user-profile.js"></script>
+</body>
+</html>

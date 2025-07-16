@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Intercambios - Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="my-objects.html" class="nav-link">Mis Objetos</a>
+                    <a href="my-exchanges.html" class="nav-link active">Mis Intercambios</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <img src="../assets/images/avatar.jpg" alt="Avatar" class="user-avatar">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="user-catalog.html" class="dropdown-item">Mi Catálogo</a>
+                            <a href="#" class="dropdown-item">Configuración</a>
+                            <a href="javascript:void(0)" onclick="logout()" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mis Intercambios</h1>
+                <p>Gestiona tus intercambios activos y completados</p>
+            </div>
+
+            <!-- Exchange Tabs -->
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="pending">
+                        Pendientes <span class="tab-count">3</span>
+                    </button>
+                    <button class="tab-button" data-tab="active">
+                        Activos <span class="tab-count">2</span>
+                    </button>
+                    <button class="tab-button" data-tab="completed">
+                        Completados <span class="tab-count">8</span>
+                    </button>
+                </div>
+
+                <!-- Pending Exchanges Tab -->
+                <div id="pending" class="tab-content active">
+                    <div class="exchanges-list">
+                        <!-- Exchange Card 1 -->
+                        <div class="exchange-card">
+                            <div class="exchange-header">
+                                <div class="exchange-type">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 2v16M2 10h16" stroke="#FF9800" stroke-width="2"/>
+                                    </svg>
+                                    <span>Propuesta recibida</span>
+                                </div>
+                                <div class="exchange-date">Hace 2 horas</div>
+                            </div>
+                            
+                            <div class="exchange-content">
+                                <div class="exchange-items">
+                                    <div class="exchange-item my-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/vinyl-trench.jpg" alt="Mi objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Tu objeto</h4>
+                                            <p>Disco de Vinilo - Trench autografiado</p>
+                                            <span class="item-category">Música</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="exchange-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M7 16l-4-4 4-4M17 8l4 4-4 4" stroke="#4CAF50" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="exchange-item their-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/guitar.jpg" alt="Su objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Objeto ofrecido</h4>
+                                            <p>Guitarra Acústica Yamaha</p>
+                                            <span class="item-category">Música</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-user">
+                                    <img src="../assets/images/user1.jpg" alt="Usuario" class="user-avatar">
+                                    <div class="user-info">
+                                        <h4>María López</h4>
+                                        <div class="user-rating">
+                                            <div class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                            </div>
+                                            <span>(4.8)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-message">
+                                    <p>"Hola, me interesa mucho tu disco de vinilo. Mi guitarra está en perfecto estado y es perfecta para alguien que está empezando. ¿Te interesa el intercambio?"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exchange-actions">
+                                <button class="btn btn-outline" onclick="rejectExchange(1)">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Rechazar
+                                </button>
+                                <button class="btn btn-primary" onclick="acceptExchange(1)">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M13 4L6 11 3 8" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Aceptar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Exchange Card 2 -->
+                        <div class="exchange-card">
+                            <div class="exchange-header">
+                                <div class="exchange-type">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 2v16M2 10h16" stroke="#2196F3" stroke-width="2"/>
+                                    </svg>
+                                    <span>Propuesta enviada</span>
+                                </div>
+                                <div class="exchange-date">Hace 1 día</div>
+                            </div>
+                            
+                            <div class="exchange-content">
+                                <div class="exchange-items">
+                                    <div class="exchange-item my-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/monitor-gaming.jpg" alt="Mi objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Tu objeto</h4>
+                                            <p>Monitor Gaming IPS LCD</p>
+                                            <span class="item-category">Tecnología</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="exchange-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M7 16l-4-4 4-4M17 8l4 4-4 4" stroke="#4CAF50" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="exchange-item their-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/laptop.jpg" alt="Su objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Objeto solicitado</h4>
+                                            <p>Laptop Dell Inspiron 15</p>
+                                            <span class="item-category">Tecnología</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-user">
+                                    <img src="../assets/images/user2.jpg" alt="Usuario" class="user-avatar">
+                                    <div class="user-info">
+                                        <h4>Carlos Ruiz</h4>
+                                        <div class="user-rating">
+                                            <div class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star">★</span>
+                                            </div>
+                                            <span>(4.2)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-status">
+                                    <div class="status-indicator pending">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <circle cx="8" cy="8" r="7" stroke="#FF9800" stroke-width="2"/>
+                                            <path d="M8 4v4l3 3" stroke="#FF9800" stroke-width="2"/>
+                                        </svg>
+                                        Esperando respuesta
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="exchange-actions">
+                                <button class="btn btn-outline" onclick="cancelExchange(2)">
+                                    Cancelar propuesta
+                                </button>
+                                <button class="btn btn-secondary" onclick="viewExchange(2)">
+                                    Ver detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Exchanges Tab -->
+                <div id="active" class="tab-content">
+                    <div class="exchanges-list">
+                        <!-- Active Exchange Card -->
+                        <div class="exchange-card active-exchange">
+                            <div class="exchange-header">
+                                <div class="exchange-type">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 18s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#4CAF50" stroke-width="2"/>
+                                    </svg>
+                                    <span>Intercambio activo</span>
+                                </div>
+                                <div class="exchange-date">Aceptado hace 3 días</div>
+                            </div>
+                            
+                            <div class="exchange-content">
+                                <div class="exchange-items">
+                                    <div class="exchange-item my-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/book-soledad.jpg" alt="Mi objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Tu objeto</h4>
+                                            <p>Libro Cien Años de Soledad</p>
+                                            <span class="item-category">Libros</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="exchange-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M7 16l-4-4 4-4M17 8l4 4-4 4" stroke="#4CAF50" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="exchange-item their-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/book-harry.jpg" alt="Su objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Objeto recibido</h4>
+                                            <p>Colección Harry Potter</p>
+                                            <span class="item-category">Libros</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-user">
+                                    <img src="../assets/images/user3.jpg" alt="Usuario" class="user-avatar">
+                                    <div class="user-info">
+                                        <h4>Ana García</h4>
+                                        <div class="user-rating">
+                                            <div class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                            </div>
+                                            <span>(5.0)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-progress">
+                                    <div class="progress-step completed">
+                                        <div class="step-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M13 4L6 11 3 8" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <span>Intercambio aceptado</span>
+                                    </div>
+                                    <div class="progress-step completed">
+                                        <div class="step-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M13 4L6 11 3 8" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <span>Contacto compartido</span>
+                                    </div>
+                                    <div class="progress-step current">
+                                        <div class="step-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <circle cx="8" cy="8" r="3" fill="currentColor"/>
+                                            </svg>
+                                        </div>
+                                        <span>Coordinando encuentro</span>
+                                    </div>
+                                    <div class="progress-step">
+                                        <div class="step-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <span>Intercambio completado</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-info">
+                                    <h4>Información de contacto</h4>
+                                    <p><strong>Teléfono:</strong> +34 666 777 888</p>
+                                    <p><strong>Email:</strong> ana.garcia@email.com</p>
+                                    <p><strong>Ubicación:</strong> Madrid, España</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exchange-actions">
+                                <button class="btn btn-outline" onclick="reportProblem(3)">
+                                    Reportar problema
+                                </button>
+                                <button class="btn btn-success" onclick="completeExchange(3)">
+                                    Marcar como completado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completed Exchanges Tab -->
+                <div id="completed" class="tab-content">
+                    <div class="exchanges-list">
+                        <!-- Completed Exchange Card -->
+                        <div class="exchange-card completed-exchange">
+                            <div class="exchange-header">
+                                <div class="exchange-type">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 18s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#4CAF50" stroke-width="2"/>
+                                    </svg>
+                                    <span>Intercambio completado</span>
+                                </div>
+                                <div class="exchange-date">Completado hace 1 semana</div>
+                            </div>
+                            
+                            <div class="exchange-content">
+                                <div class="exchange-items">
+                                    <div class="exchange-item my-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/chair.jpg" alt="Mi objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Tu objeto</h4>
+                                            <p>Silla Cómoda S - Serie</p>
+                                            <span class="item-category">Hogar</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="exchange-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M7 16l-4-4 4-4M17 8l4 4-4 4" stroke="#4CAF50" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="exchange-item their-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/desk.jpg" alt="Su objeto">
+                                        </div>
+                                        <div class="item-info">
+                                            <h4>Objeto recibido</h4>
+                                            <p>Escritorio de Madera</p>
+                                            <span class="item-category">Hogar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-user">
+                                    <img src="../assets/images/user4.jpg" alt="Usuario" class="user-avatar">
+                                    <div class="user-info">
+                                        <h4>Pedro Martínez</h4>
+                                        <div class="user-rating">
+                                            <div class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star">★</span>
+                                            </div>
+                                            <span>(4.6)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-rating">
+                                    <h4>Tu calificación</h4>
+                                    <div class="stars">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <p>"Excelente intercambio. Pedro fue muy puntual y el escritorio estaba en perfecto estado."</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exchange-actions">
+                                <button class="btn btn-outline" onclick="viewExchange(4)">
+                                    Ver detalles
+                                </button>
+                                <button class="btn btn-primary" onclick="viewUserCatalog('pedro-martinez')">
+                                    Ver catálogo del usuario
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/exchanges.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        // Protect page - redirect to login if not authenticated
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPage();
+        });
+
+        // My Exchanges specific functionality
+        function acceptExchange(exchangeId) {
+            if (confirm('¿Estás seguro de aceptar este intercambio?')) {
+                // Simulate API call
+                setTimeout(() => {
+                    alert('Intercambio aceptado. Se ha compartido tu información de contacto.');
+                    // Move to active tab
+                    document.querySelector('[data-tab="active"]').click();
+                }, 1000);
+            }
+        }
+
+        function rejectExchange(exchangeId) {
+            if (confirm('¿Estás seguro de rechazar este intercambio?')) {
+                // Simulate API call
+                setTimeout(() => {
+                    alert('Intercambio rechazado.');
+                    // Remove from DOM
+                    document.querySelector(`[onclick="rejectExchange(${exchangeId})"]`).closest('.exchange-card').remove();
+                }, 1000);
+            }
+        }
+
+        function cancelExchange(exchangeId) {
+            if (confirm('¿Estás seguro de cancelar esta propuesta?')) {
+                // Simulate API call
+                setTimeout(() => {
+                    alert('Propuesta cancelada.');
+                    document.querySelector(`[onclick="cancelExchange(${exchangeId})"]`).closest('.exchange-card').remove();
+                }, 1000);
+            }
+        }
+
+        function completeExchange(exchangeId) {
+            if (confirm('¿Confirmas que el intercambio se ha completado correctamente?')) {
+                // Simulate API call
+                setTimeout(() => {
+                    alert('¡Intercambio completado! Por favor, califica tu experiencia.');
+                    window.location.href = `exchange-rating.html?exchange=${exchangeId}`;
+                }, 1000);
+            }
+        }
+
+        function reportProblem(exchangeId) {
+            if (confirm('¿Hay algún problema con este intercambio?')) {
+                window.location.href = `report-problem.html?exchange=${exchangeId}`;
+            }
+        }
+
+        function viewExchange(exchangeId) {
+            window.location.href = `exchange-detail.html?id=${exchangeId}`;
+        }
+
+        function viewUserCatalog(userId) {
+            window.location.href = `user-catalog.html?user=${userId}`;
+        }
+    </script>
+</body>
+</html>

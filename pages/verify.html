@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Cuenta | Truek-e</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="logo">Truek-e</a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    <a href="publish.html" class="nav-link">Publicar Objeto</a>
+                    <a href="my-exchanges.html" class="nav-link">Mis Intercambios</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="register.html" class="btn btn-outline">Registrarse</a>
+                    <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Verify Form -->
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1 class="auth-title">Verifica tu cuenta</h1>
+            <p class="auth-subtitle">Te hemos enviado un correo con un código de verificación. Ingresa el código aquí para validar tu cuenta:</p>
+
+            <form class="auth-form" id="verifyForm">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Código" maxlength="6" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Verificar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
